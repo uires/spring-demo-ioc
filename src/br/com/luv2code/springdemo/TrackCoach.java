@@ -7,4 +7,9 @@ public class TrackCoach implements Coach{
 		return "Run 5k in 3 hours";
 	}
 
+	@Override
+	public String getNameOfCoach() {
+		return "John";
+	}
+
 }
