@@ -6,6 +6,8 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
+	<context:property-placeholder
+		location="classpath:team.properties" />
 	<bean id="myFortuneService"
 		class="br.com.luv2code.springdemo.service.HappyFortuneService">
 	</bean>
@@ -15,9 +17,9 @@
 	</bean>
 	<bean id="myCricketCoach"
 		class="br.com.luv2code.springdemo.entity.CricketCoach">
-		<property name="fortuneService" ref="myFortuneService"/>
+		<property name="fortuneService" ref="myFortuneService" />
 		<!-- Injetando valores literalmente -->
-		<property name="emailAddress" value="uiresdev@gmail.com"/>	
-		<property name="team" value="SunDown Wolfs"/>
+		<property name="emailAddress" value="${coach.email}" />
+		<property name="team" value="${coach.team}" />
 	</bean>
 </beans>
