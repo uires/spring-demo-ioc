@@ -41,6 +41,10 @@ public class CricketCoach implements Coach {
 		this.fortuneService = fortuneService;
 	}
 
+	public double[] getFornute() {
+		return fortuneService.getFortune();
+	}
+	
 	@Override
 	public String getDailyFortune() {
 		return "Cricket Coach ->" + this.fortuneService.getDailyFortune();
