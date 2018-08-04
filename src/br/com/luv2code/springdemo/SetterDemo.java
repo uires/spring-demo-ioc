@@ -9,6 +9,7 @@ public class SetterDemo {
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		CricketCoach theCoach = context.getBean("myCricketCoach", CricketCoach.class);
+		System.out.printf("R$ %.2f %n", (theCoach.getFornute()[0]));
 
 		System.out.println(theCoach.getDailyWorkout());
 		System.out.println(theCoach.getDailyFortune());
