@@ -16,5 +16,4 @@ public class SetterDemo {
 		System.out.println(theCoach.getTeam());
 		context.close();
 	}
-
 }
