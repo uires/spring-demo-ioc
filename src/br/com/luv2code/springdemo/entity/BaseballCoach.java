@@ -1,4 +1,7 @@
-package br.com.luv2code.springdemo;
+package br.com.luv2code.springdemo.entity;
+
+import br.com.luv2code.springdemo.IF.Coach;
+import br.com.luv2code.springdemo.IF.FortuneService;
 
 public class BaseballCoach implements Coach {
 	private FortuneService fortuneService;
