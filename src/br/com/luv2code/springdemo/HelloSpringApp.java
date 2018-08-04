@@ -8,7 +8,6 @@ public class HelloSpringApp {
 		ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext(
 				"applicationContext.xml");
 		Coach theCoach = classPathXmlApplicationContext.getBean("myCoach", Coach.class);
-		System.out.println(theCoach.getNameOfCoach() + " say:");
 		System.out.println(theCoach.getDailyWorkout());
 		classPathXmlApplicationContext.close();
 	}
