@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+	<context:component-scan base-package="br.com.luv2code.springdemo.entity" />
+	
+	<context:property-placeholder
+		location="classpath:team.properties" />
+	<bean id="myFortuneService"
+		class="br.com.luv2code.springdemo.service.HappyFortuneService">
+	</bean>
+	<bean id="myCoach"
+		class="br.com.luv2code.springdemo.entity.BaseballCoach">
+		<constructor-arg ref="myFortuneService" />
+	</bean>
+	<bean id="myCricketCoach"
+		class="br.com.luv2code.springdemo.entity.CricketCoach">
+		<property name="fortuneService" ref="myFortuneService" />
+		<!-- Injetando valores literalmente -->
+		<property name="emailAddress" value="${coach.email}" />
+		<property name="team" value="${coach.team}" />
+	</bean>
+</beans>
