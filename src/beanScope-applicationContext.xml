@@ -11,7 +11,10 @@
 		class="br.com.luv2code.springdemo.service.HappyFortuneService">
 	</bean>
 	<bean id="myCoach"
-		class="br.com.luv2code.springdemo.entity.BaseballCoach">
+		class="br.com.luv2code.springdemo.entity.BaseballCoach"
+		scope="singleton" 
+		init-method="initMethodCall"
+		destroy-method="endMethodCall">
 		<constructor-arg ref="myFortuneService" />
 	</bean>
 
