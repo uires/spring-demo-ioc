@@ -6,10 +6,7 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-	<context:component-scan base-package="br.com.luv2code.springdemo.entity" />
-	
-	<context:property-placeholder
-		location="classpath:team.properties" />
+
 	<bean id="myFortuneService"
 		class="br.com.luv2code.springdemo.service.HappyFortuneService">
 	</bean>
@@ -17,11 +14,5 @@
 		class="br.com.luv2code.springdemo.entity.BaseballCoach">
 		<constructor-arg ref="myFortuneService" />
 	</bean>
-	<bean id="myCricketCoach"
-		class="br.com.luv2code.springdemo.entity.CricketCoach">
-		<property name="fortuneService" ref="myFortuneService" />
-		<!-- Injetando valores literalmente -->
-		<property name="emailAddress" value="${coach.email}" />
-		<property name="team" value="${coach.team}" />
-	</bean>
+
 </beans>
