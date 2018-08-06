@@ -20,4 +20,12 @@ public class BaseballCoach implements Coach {
 		return fortuneService.getDailyFortune();
 	}
 
+	public void initMethodCall() {
+		System.out.println("Método de inicialização do BEAN");
+	}
+
+	public void endMethodCall() {
+		System.out.println("Método de finalização do BEAN");
+	}
+
 }
