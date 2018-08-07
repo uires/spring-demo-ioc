@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import br.com.luv2code.springdemo.IF.Coach;
 
-@Component("thatTennisCoach")
+@Component
 public class TennisCoach implements Coach {
 
 	@Override
