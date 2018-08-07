@@ -8,18 +8,22 @@ import br.com.luv2code.springdemo.IF.FortuneService;
 
 @Component
 public class TennisCoach implements Coach {
+	@Autowired
 	private FortuneService fortuneService;
 
-	@Autowired
-	public void setFortuneService(FortuneService service) {
-		this.fortuneService = service;
+	public TennisCoach() {
+
 	}
+	/*
+	 * @Autowired public void setFortuneService(FortuneService service) {
+	 * this.fortuneService = service; }
+	 */
 
 	/*
 	 * @Autowired public TennisCoach(FortuneService fortuneService) {
 	 * this.fortuneService = fortuneService; }
 	 */
-	
+
 	@Override
 	public String getDailyWorkout() {
 		return "Pratice your backhand volley";
