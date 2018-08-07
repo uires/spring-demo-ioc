@@ -50,4 +50,10 @@ public class CricketCoach implements Coach {
 		return "Cricket Coach ->" + this.fortuneService.getDailyFortune();
 	}
 
+	@Override
+	public double[] getFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

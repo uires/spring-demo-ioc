@@ -20,4 +20,10 @@ public class TrackCoach implements Coach {
 		return "This is your -> " + this.fortuneService.getDailyFortune();
 	}
 
+	@Override
+	public double[] getFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

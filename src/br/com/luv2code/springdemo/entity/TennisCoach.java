@@ -34,4 +34,8 @@ public class TennisCoach implements Coach {
 		return this.fortuneService.getDailyFortune();
 	}
 
+	public double[] getFortune() {
+		return this.fortuneService.getFortune();
+	}
+
 }

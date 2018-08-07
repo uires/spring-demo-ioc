@@ -17,4 +17,9 @@ public class FootballCoach implements Coach {
 		return "Today is your bad day!";
 	}
 
+	@Override
+	public double[] getFortune() {
+		return null;
+	}
+
 }

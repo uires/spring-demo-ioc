@@ -28,4 +28,10 @@ public class BaseballCoach implements Coach {
 		System.out.println("Método de finalização do BEAN");
 	}
 
+	@Override
+	public double[] getFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
