@@ -1,8 +1,13 @@
 package br.com.luv2code.springdemo.entity;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import br.com.luv2code.springdemo.IF.Coach;
 import br.com.luv2code.springdemo.IF.FortuneService;
 
+@Component
+@Scope("prototype")
 public class BaseballCoach implements Coach {
 	private FortuneService fortuneService;
 
@@ -30,8 +35,7 @@ public class BaseballCoach implements Coach {
 
 	@Override
 	public double[] getFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return new double[] { 10.3, 22223.13, 200.10 };
 	}
 
 }
