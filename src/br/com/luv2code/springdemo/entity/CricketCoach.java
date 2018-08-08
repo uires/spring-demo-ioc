@@ -1,16 +1,20 @@
 package br.com.luv2code.springdemo.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import br.com.luv2code.springdemo.IF.Coach;
 import br.com.luv2code.springdemo.IF.FortuneService;
 
 public class CricketCoach implements Coach {
+	@Autowired
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 
 	private String emailAddress;
 	private String team;
 
 	public CricketCoach() {
-		System.out.println("Inside no-arg construct");
 	}
 
 	public String getEmailAddress() {
@@ -18,7 +22,6 @@ public class CricketCoach implements Coach {
 	}
 
 	public void setEmailAddress(String emailAddress) {
-		System.out.println("CricketCoach: inside setter method -> setEmailAddress");
 		this.emailAddress = emailAddress;
 	}
 
@@ -27,7 +30,6 @@ public class CricketCoach implements Coach {
 	}
 
 	public void setTeam(String team) {
-		System.out.println("CricketCoach: inside setter method -> setTeam");
 		this.team = team;
 	}
 
@@ -37,7 +39,6 @@ public class CricketCoach implements Coach {
 	}
 
 	public void setFortuneService(FortuneService fortuneService) {
-		System.out.println("Inside setter method fortuneService, by spring");
 		this.fortuneService = fortuneService;
 	}
 
@@ -52,8 +53,7 @@ public class CricketCoach implements Coach {
 
 	@Override
 	public double[] getFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.fortuneService.getFortune();
 	}
 
 }
