@@ -11,15 +11,13 @@ import br.com.luv2code.springdemo.service.RandomFortuneService;
 @Configuration
 public class ConfigurationJavaCodeBeans {
 	@Bean
-	public FortuneService service() {
+	public FortuneService randomFortuneService() {
 		return new RandomFortuneService();
 	}
 
 	@Bean
-	public Coach gymCoach(FortuneService service) {
-		GymCoach coach = new GymCoach(service);
-		
+	public Coach gymCoach() {
+		GymCoach coach = new GymCoach(this.randomFortuneService());
 		return coach;
-		
 	}
 }
