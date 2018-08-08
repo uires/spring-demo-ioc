@@ -9,7 +9,7 @@ public class JavaConfigurationDemoApp {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext configApplicationContext = new AnnotationConfigApplicationContext(
 				Configuracao.class);
-		Coach theCoach = configApplicationContext.getBean("baseballCoach", Coach.class);
+		Coach theCoach = configApplicationContext.getBean("tennisCoach", Coach.class);
 		System.out.println("Testando classe de configuração ->");
 		System.out.println(theCoach.getDailyWorkout());
 		configApplicationContext.close();
