@@ -1,12 +1,15 @@
 package br.com.luv2code.springdemo.service;
 
+import org.springframework.stereotype.Component;
+
 import br.com.luv2code.springdemo.IF.FortuneService;
 
+@Component
 public class HappyFortuneService implements FortuneService {
 
 	@Override
 	public String getDailyFortune() {
-		return "Today is your lucky day!";
+		return "Today is ---!";
 	}
 
 	@Override
