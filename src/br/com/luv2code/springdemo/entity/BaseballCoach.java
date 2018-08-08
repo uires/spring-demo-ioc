@@ -1,5 +1,8 @@
 package br.com.luv2code.springdemo.entity;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +13,19 @@ import br.com.luv2code.springdemo.IF.FortuneService;
 @Scope("prototype")
 public class BaseballCoach implements Coach {
 	private FortuneService fortuneService;
+
+	@PostConstruct
+	public void doMyStuffConstructHere() {
+		System.out.println(">> inside -> doMyStuffConstructHere()");
+	}
+
+	/*
+	 * círculo de vida de um Bean
+	 */
+	@PreDestroy
+	public void doMyCleanStuffMethod() {
+		System.out.println("Inside >> -> doMyCleanStuffMethod()");
+	}
 
 	public BaseballCoach(FortuneService theFortuneService) {
 		this.fortuneService = theFortuneService;
